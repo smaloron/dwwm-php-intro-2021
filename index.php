@@ -92,11 +92,19 @@ if($fontSize < 10){
 
         <div>
             <label>couleur</label>
+            
             <select name="couleur">
+                <!-- boucle sur la liste des couleurs -->
                 <?php foreach($colorList as $item): ?>
-                    <option><?php echo $item ?></option>
+                    <!-- Affichage de l'élément de colorList en cours -->
+                    <!-- préselection de la couleur en fonction du choix précédent !-->
+                    <option <?= $item==$color ? "selected" : "" ?>>
+                        <?php echo $item ?>
+                    </option>
+                <!-- fin de la boucle -->
                 <?php endforeach ?>
             </select>
+            
         </div>
 
         <div>
