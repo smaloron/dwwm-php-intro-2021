@@ -97,7 +97,7 @@ if($fontSize < 10){
                 <!-- boucle sur la liste des couleurs -->
                 <?php foreach($colorList as $item): ?>
                     <!-- Affichage de l'élément de colorList en cours -->
-                    <!-- préselection de la couleur en fonction du choix précédent !-->
+                    <!-- préselection de la couleur en fonction du choix précédent -->
                     <option <?= $item==$color ? "selected" : "" ?>>
                         <?php echo $item ?>
                     </option>
