@@ -4,9 +4,6 @@
 var_dump($_POST);
 $skills = $_POST["skills"] ?? [];
 var_dump($skills);
-
-
-
 ?>
 
 <!DOCTYPE html>
