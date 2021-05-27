@@ -3,20 +3,30 @@
 // As-t-on envoyé un fichier ?
 $hasUpload = isset($_FILES["photo"]);
 
-if($hasUpload){
+$allowedTypes = [
+    "image/jpeg" => ".jpg",
+    "image/png" => ".png",
+    "image/gif" => ".gif",
+];
+
+if ($hasUpload) {
     $upload = $_FILES["photo"];
 
-    // Définir un nom unique
-    $imgName = "/images/". uniqid(). ".jpg";
-    // Définir le chemin absolu vers le fichier
-    $targetPath = getcwd(). $imgName;
-    var_dump($targetPath);
+    // définir si le type est dans la liste des types autorisés
+    if (array_key_exists($upload["type"], $allowedTypes)) {
+        // Définir un nom unique
+        $imgName = "/images/" . uniqid() . ".jpg";
+        // Définir le chemin absolu vers le fichier
+        $targetPath = getcwd() . $imgName;
 
-    // Déplacer le fichier temporaire
-    if(! move_uploaded_file($upload["tmp_name"], $targetPath)){
-        echo "Echec de l'upload";
+        // Déplacer le fichier temporaire
+        if (!move_uploaded_file($upload["tmp_name"], $targetPath)) {
+            echo "Echec de l'upload";
+        } else {
+            echo "<img src=\"$imgName\">";
+        }
     } else {
-        echo "<img src=\"$imgName\">";
+        echo "Seulement des fichiers jpeg, png ou gif";
     }
 }
 
@@ -39,6 +49,6 @@ if($hasUpload){
     </div>
     <button type="submit" name="submit">Envoyer</button>
 </form>
-    
+
 </body>
 </html>
