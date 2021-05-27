@@ -7,11 +7,11 @@
 
     // Le formulaire a-til été envoyé
     $isPosted = filter_has_var(INPUT_POST, "submit");
-var_dump($_POST);
+
     if($isPosted){
         // Récupération de la saisie
         $name = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_STRING);
-var_dump($name);
+
         // Insertion dans la liste si la saisie n'est pas vide
         if(! empty($name)){
             // Ajout au tableau
@@ -21,6 +21,10 @@ var_dump($name);
 
             // Enregistrement dans le fichier text
             file_put_contents("data/noms.txt", $listAsString);
+
+            // Redirection pour éviter de reposter les données à l'actualisation de la page
+            header("location:lecture-noms.php");
+            exit;
 
         }
     }
