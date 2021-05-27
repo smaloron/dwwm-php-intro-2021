@@ -25,6 +25,9 @@
 </head>
 <body>
 
+<?php include "navigation.php"?>
+
+
 <form method="post">
     <div>
         <input type="checkbox" name="abonnement" >

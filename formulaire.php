@@ -14,6 +14,8 @@ var_dump($_POST);
     <title>Formulaire</title>
 </head>
 <body>
+    <?php include "navigation.php"?>
+
     <form method="POST" action="traitement-formulaire.php">
         <input type="text" name="nom" placeholder="Votre nom">
         <button type="submit">Valider</button>

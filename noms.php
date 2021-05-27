@@ -1,5 +1,7 @@
 <?php
 
+include "navigation.php";
+
 $firstNames = [
     "Jean", "Pierre", "Pauline", "Natacha", "Paul", "Odile", "Lydia", "Yoko"
 ];

@@ -27,6 +27,7 @@
     <title>Formulaire filter input</title>
 </head>
 <body>
+<?php include "navigation.php"?>
 
 <form method="post">
     <div>

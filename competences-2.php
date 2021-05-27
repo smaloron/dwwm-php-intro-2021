@@ -15,6 +15,8 @@ var_dump($skills);
     <title>Compétences</title>
 </head>
 <body>
+    <?php include "navigation.php"?>
+
 
 <form method="post">
     <div>

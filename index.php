@@ -53,6 +53,8 @@ if($fontSize < 10){
 </head>
 
 <body>
+    <?php include "navigation.php"?>
+
     <h1>Page par défaut</h1>
 
     <?php if(empty($errors)) :?>

@@ -21,6 +21,8 @@ if($isPosted){
 </head>
 <body>
 
+    <?php include "navigation.php" ?>
+
     <?php
         if($isPosted){
             if($age < 18){

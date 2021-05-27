@@ -11,7 +11,7 @@ $allowedTypes = [
 
 if ($hasUpload) {
     $upload = $_FILES["photo"];
-
+var_dump($upload);
     // définir si le type est dans la liste des types autorisés
     if (array_key_exists($upload["type"], $allowedTypes)) {
         // Définir un nom unique
